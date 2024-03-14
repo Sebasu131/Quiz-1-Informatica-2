@@ -155,4 +155,28 @@ class Sistema:
     def imprimirPacientes(self):
         for objeto in self.verPacientes:
             print (objeto)
-
+def validar(mens): #se añade funcion para validar los datos numericos del menú
+    while True:
+        try:
+            valor = int(input(mens))
+            break
+        except ValueError:
+            print("Ingresar un número entero")
+            continue
+    return valor
+def main():
+        sis=Sistema()
+        while True:
+            print("1. Ingresar nuevo implante\n 2. Editar informacion de implante existente\n 3. Eliminar implante\n 4. Mostrar todo el inventario\n5.")
+            valor=validar("Valor: ")
+            if valor ==1: #ingresar nuevo implante
+                  continue
+            elif valor ==2: #editar implante existente
+                  continue
+            elif valor ==3: #eliminar implante existente
+                  continue
+            elif valor ==4: #mostrar todo el inventario
+                  continue
+            elif valor==5:
+                  continue
+            break
