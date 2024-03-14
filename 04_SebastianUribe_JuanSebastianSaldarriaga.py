@@ -57,3 +57,43 @@ class ImplanteDental(ImplanteMedico):
         return self.__forma
     def versistema(self):
         return self.__sistema_fijacion
+    
+class ProtesisRodilla(ImplanteMedico):
+    def __init__(self, material, tipo_fijacion, tamano):
+        super().__init__("Prótesis de rodilla", material, tipo_fijacion, tamano)
+
+class Paciente:
+    
+    def __init__(self,nombre,cedula,fechaimplantacion,medico,estadoimp,implante):
+        self.__nombre= nombre
+        self.__cedula= cedula
+        self.__fechaimplantacion= fechaimplantacion
+        self.__medico= medico
+        self.__estadoimp= estadoimp
+        self.__implante= implante
+        
+    def verNombre(self):
+        return self.__nombre
+    def verCedula(self):
+        return self.__cedula
+    def verFechaimplantacion(self):
+        return self.__fechaimplantacion
+    def verMedico(self):
+        return self.__medico
+    def verEstadoimp(self):
+        return self.__estadoimp
+    def verImplante(self):
+        return self.__implante
+            
+    def asignarNombre(self,n):
+        self.__nombre=n
+    def asignarCedula(self,c):
+        self.__cedula=c
+    def asignarFechaimplantacion(self,fi):
+        self.__fechaimplantacion=fi
+    def asignarMedico(self,M):
+        self.__medico=M
+    def asignarEstadoimp(self,f):
+        self.__estadoimp=f
+    def asignarImplante(self,i):
+        self.__implante=i
