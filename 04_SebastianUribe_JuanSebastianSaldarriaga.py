@@ -170,7 +170,36 @@ def main():
             print("1. Ingresar nuevo implante\n 2. Editar informacion de implante existente\n 3. Eliminar implante\n 4. Mostrar todo el inventario\n5.")
             valor=validar("Valor: ")
             if valor ==1: #ingresar nuevo implante
-                  continue
+                cedula = input("Ingrese la cédula del paciente: ")
+                material=input("Ingrese el material: ")
+                tipo_fijacion=input("Ingrese el tipo de fijación: ")
+                tamano=input("Ingrese el tamaño del implante: ")
+                while True:
+                    opc=validar("Ingrese el tipo de implante:\n1. Implante dental\n2. Marcapasos\n3. Protesis de cadera\n4. Protesis de rodilla\n5. Stent coronario\n6. Salir\n")
+                    if opc == 1:
+                        forma=input("Ingrese la forma del implante dental: ")
+                        sistema_fijacion=input("Ingrese el sistema de fijación: ")
+                        implante=ImplanteDental(material,tipo_fijacion,tamano,forma,sistema_fijacion)
+                        sis.agregarImplante(implante)#implante dental
+                    elif opc == 2:
+                        num_electrodos = input("Ingrese el número de electrodos: ")
+                        alambrico= input("Alámbrico o inalámbrico: ")
+                        frecuencia=input("Ingrese la frecuencia del marcapasos: ")
+                        implante = Marcapasos(material,tipo_fijacion,tamano,num_electrodos,alambrico,frecuencia)
+                        sis.agregarImplante(implante)
+                        #marcapasos
+                    elif opc==3:#protesis de cadera
+                        continue
+                    elif opc==4:
+                        #protesis de rodilla
+                    elif opc==5:
+                        continue
+                        #stent coronario
+                    elif opc==6: #salida
+                        break
+                    else:
+                        print('ingrese una opción válida')
+                        continue
             elif valor ==2: #editar implante existente
                   continue
             elif valor ==3: #eliminar implante existente
@@ -178,5 +207,5 @@ def main():
             elif valor ==4: #mostrar todo el inventario
                   continue
             elif valor==5:
-                  continue
-            break
+                  break
+            
