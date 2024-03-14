@@ -279,15 +279,15 @@ def main():
                   while True:
                     opc = validar("Menú de Eliminación - Ingrese el tipo de implante a eliminar:\n1. Implante Dental\n2. Marcapasos\n3. Prótesis de Cadera\n4. Prótesis de Rodilla\n5. Stent Coronario\n6. Salir\n") 
                     if opc == 1:
-                        continue#implante dental
+                        nombre_implante = "Implante Dental"#implante dental
                     elif opc == 2:
-                        continue
+                        nombre_implante = "Marcapasos"
                     elif opc == 3:
-                        continue
+                        nombre_implante = "Prótesis de Cadera"
                     elif opc == 4:
-                        continue #protesis de rodilla
+                        nombre_implante = "Prótesis de Rodilla" #protesis de rodilla
                     elif opc == 5:
-                        continue #stent coronario
+                        nombre_implante = "Stent Coronario" #stent coronario
                     elif opc == 6: #salir
                         break
                     else:
