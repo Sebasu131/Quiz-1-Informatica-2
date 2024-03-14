@@ -36,7 +36,14 @@ class Marcapasos(ImplanteMedico):
     def veralambrico(self):
         return self.__alambrico
     def verfrecuencia(self):
-        return self.__frecuenciaç
+        return self.__frecuencia
+    def asignarelectrodos(self,n):
+        self.__num_electrodos=n
+    def asignaralambrico(self,c):
+        self.__alambrico=c
+    def asignarfrecuencia(self,fi):
+        self.__frecuencia=fi
+    
 
 class StentCoronario(ImplanteMedico):
     def __init__(self, material, tipo_fijacion, tamano, longitud, diametro):
@@ -47,6 +54,10 @@ class StentCoronario(ImplanteMedico):
         return self.__longitud
     def verdiametro(self):
         return self.__diametro
+    def asignarlongitud(self,l):
+        self.__longitud=l
+    def asignardiametro(self,d):
+        self.__diametro=d
 
 class ImplanteDental(ImplanteMedico):
     def __init__(self, material, tipo_fijacion, tamano, forma, sistema_fijacion):
@@ -57,7 +68,11 @@ class ImplanteDental(ImplanteMedico):
         return self.__forma
     def versistema(self):
         return self.__sistema_fijacion
-    
+    def asignarforma(self,f):
+        self.__forma= f
+    def asignarsistema(self,s):
+        self.__sistema_fijacion=s
+        
 class ProtesisRodilla(ImplanteMedico):
     def __init__(self, material, tipo_fijacion, tamano):
         super().__init__("Prótesis de rodilla", material, tipo_fijacion, tamano)
