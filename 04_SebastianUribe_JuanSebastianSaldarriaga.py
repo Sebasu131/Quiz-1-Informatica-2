@@ -130,11 +130,14 @@ class Sistema:
     
     def agregarImplante(self, implante):
         self.__inventario.append(implante)
+        print("Implante agregado al inventario.")
 
     def eliminarImplante(self, implante):
         if implante in self.__inventario:
             self.__inventario.remove(implante)
-            print("Implante eliminado.") 
+            print("Implante eliminado del inventario.")
+        else:
+            print("Implante no encontrado en el inventario.")
 
     def ingresarPaciente(self, paciente):
         self.__pacientes.append(paciente)
@@ -276,31 +279,27 @@ def main():
                         print("Implante editado correctamente.")
                         break
             elif valor ==3: #eliminar implante existente
-                  while True:
-                    opc = validar("Menú de Eliminación - Ingrese el tipo de implante a eliminar:\n1. Implante Dental\n2. Marcapasos\n3. Prótesis de Cadera\n4. Prótesis de Rodilla\n5. Stent Coronario\n6. Salir\n") 
-                    if opc == 1:
-                        nombre_implante = "Implante Dental"#implante dental
-                    elif opc == 2:
-                        nombre_implante = "Marcapasos"
-                    elif opc == 3:
-                        nombre_implante = "Prótesis de Cadera"
-                    elif opc == 4:
-                        nombre_implante = "Prótesis de Rodilla" #protesis de rodilla
-                    elif opc == 5:
-                        nombre_implante = "Stent Coronario" #stent coronario
-                    elif opc == 6: #salir
+                while True:
+                    opc = validar("Menú de Eliminación - Ingrese el tipo de implante a eliminar:\n1. Implante Dental\n2. Marcapasos\n3. Prótesis de Cadera\n4. Prótesis de Rodilla\n5. Stent Coronario\n6. Salir\n")
+                    tipo_implantes = {1: "Implante Dental", 2: "Marcapasos", 3: "Prótesis de Cadera", 4: "Prótesis de Rodilla", 5: "Stent Coronario"}
+                    nombre_implante = tipo_implantes.get(opc)
+                    if nombre_implante:
+                        for implante in sis.Verinventario():
+                            if implante.tipo == nombre_implante:
+                                sis.eliminarImplante(implante)
+                                print(f"Implante {nombre_implante} eliminado correctamente.")
+                                break
+                        else:
+                            print(f"No se encontró ningún implante del tipo {nombre_implante} en el inventario.")
+                    elif opc == 6:
                         break
                     else:
                         print('Ingrese una opción válida')
-                    for implante in sis.Verinventario():
-                        if implante.tipo == nombre_implante:
-                            sis.eliminarImplante(implante)
-                            print(f"Implante {nombre_implante} eliminado correctamente.")
-                            break
+                  
             elif valor ==4: #mostrar todo el inventario
                 print("Inventario:")
                 sis.imprimirInventario()               
                 
             elif valor==5:
                   break
-            
+main()            
