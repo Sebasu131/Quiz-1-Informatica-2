@@ -72,7 +72,7 @@ class ImplanteDental(ImplanteMedico):
         self.__forma= f
     def asignarsistema(self,s):
         self.__sistema_fijacion=s
-        
+
 class ProtesisRodilla(ImplanteMedico):
     def __init__(self, material, tipo_fijacion, tamano):
         super().__init__("Prótesis de rodilla", material, tipo_fijacion, tamano)
@@ -112,3 +112,39 @@ class Paciente:
         self.__estadoimp=f
     def asignarImplante(self,i):
         self.__implante=i
+class Sistema:
+    def __init__(self):
+        self.__inventario = []
+        self.__pacientes = []
+
+    def Verinventario(self):
+        return self.__inventario
+    
+    def agregarImplante(self, implante):
+        self.__inventario.append(implante)
+
+    def eliminarImplante(self, implante):
+        if implante in self.__inventario:
+            self.__inventario.remove(implante)
+            print("Implante eliminado.") 
+
+    def ingresarPaciente(self, paciente):
+        self.__pacientes.append(paciente)
+
+    def verPacientes(self):
+        return self.__pacientes
+
+    def verificarExiste(self, cedula):
+        return True if any(paciente.cedula == cedula for paciente in self.inventario) else False
+
+    def recuperaPac(self, cedula):
+        return next(paciente for paciente in self.__pacientes if paciente.cedula == cedula)
+    def verPacientes(self):
+        return self.__pacientes
+    def imprimirInventario(self):
+        for objeto in self.Verinventario:
+            print(objeto)
+    def imprimirPacientes(self):
+        for objeto in self.verPacientes:
+            print (objeto)
+            
