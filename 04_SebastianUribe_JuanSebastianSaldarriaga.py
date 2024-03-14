@@ -24,7 +24,7 @@ class ImplanteMedico:
 class ProtesisCadera(ImplanteMedico):
     def __init__(self, material, tipo_fijacion, tamano):
         super().__init__("Prótesis de cadera", material, tipo_fijacion, tamano)
-        
+
 class Marcapasos(ImplanteMedico):
     def __init__(self, material, tipo_fijacion, tamano, num_electrodos, alambrico, frecuencia):
         super().__init__("Marcapasos", material, tipo_fijacion, tamano)
@@ -36,4 +36,24 @@ class Marcapasos(ImplanteMedico):
     def veralambrico(self):
         return self.__alambrico
     def verfrecuencia(self):
-        return self.__frecuencia
+        return self.__frecuenciaç
+
+class StentCoronario(ImplanteMedico):
+    def __init__(self, material, tipo_fijacion, tamano, longitud, diametro):
+        super().__init__("Stent Coronario", material, tipo_fijacion, tamano)
+        self.__longitud = longitud
+        self.__diametro = diametro
+    def verlongitud(self):
+        return self.__longitud
+    def verdiametro(self):
+        return self.__diametro
+
+class ImplanteDental(ImplanteMedico):
+    def __init__(self, material, tipo_fijacion, tamano, forma, sistema_fijacion):
+        super().__init__("Implante Dental", material, tipo_fijacion, tamano)
+        self.__forma = forma
+        self.__sistema_fijacion = sistema_fijacion
+    def verforma(self):
+        return self.__forma
+    def versistema(self):
+        return self.__sistema_fijacion
