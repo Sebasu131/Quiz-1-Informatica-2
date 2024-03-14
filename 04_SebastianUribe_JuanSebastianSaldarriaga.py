@@ -189,11 +189,17 @@ def main():
                         sis.agregarImplante(implante)
                         #marcapasos
                     elif opc==3:#protesis de cadera
-                        continue
+                        implante=ProtesisCadera(material,tipo_fijacion,tamano)
+                        sis.agregarImplante(implante)#protesis de cadera
                     elif opc==4:
+                        implante=ProtesisRodilla(material,tipo_fijacion,tamano)#protesis de rodilla
+                        sis.agregarImplante(implante)
                         #protesis de rodilla
                     elif opc==5:
-                        continue
+                        longitud=input("Ingresa la longitud del stent coronario: ")
+                        diametro=input("Ingresa el diámetro del stent coronario: ")
+                        implante=StentCoronario(material,tipo_fijacion,tamano,longitud,diametro)
+                        sis.agregarImplante(implante)
                         #stent coronario
                     elif opc==6: #salida
                         break
@@ -201,7 +207,29 @@ def main():
                         print('ingrese una opción válida')
                         continue
             elif valor ==2: #editar implante existente
-                  continue
+                while True:
+                    opc = validar("Menú de Edición - Ingrese el tipo de implante a editar:\n1. Implante Dental\n2. Marcapasos\n3. Prótesis de Cadera\n4. Prótesis de Rodilla\n5. Stent Coronario\n6. Salir\n")
+
+                    if opc == 1:
+                        nombre_implante = "Implante Dental"
+                        break
+                    elif opc == 2:
+                        nombre_implante = "Marcapasos"
+                        break
+                    elif opc == 3:
+                        nombre_implante = "Prótesis de Cadera"
+                        break
+                    elif opc == 4:
+                        nombre_implante = "Prótesis de Rodilla"
+                        break
+                    elif opc == 5:
+                        nombre_implante = "Stent Coronario"
+                        break
+                    elif opc == 6:
+                        break
+                    else:
+                        print('Ingrese una opción válida')
+                        continue
             elif valor ==3: #eliminar implante existente
                   continue
             elif valor ==4: #mostrar todo el inventario
