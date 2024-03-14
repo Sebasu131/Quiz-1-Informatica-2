@@ -230,6 +230,51 @@ def main():
                     else:
                         print('Ingrese una opción válida')
                         continue
+                for implante in sis.Verinventario(): #se hace un for para iterar la lista inventario y poder editar cada objeto
+                    if implante.tipo == nombre_implante:
+                        # Implementar lógica de edición aquí
+                        print(f"Editando {nombre_implante}:")
+                        material = input("Ingrese el nuevo material: ")
+                        tipo_fijacion = input("Ingrese el nuevo tipo de fijación: ")
+                        tamano = input("Ingrese el nuevo tamaño del implante: ")
+                    
+                        if nombre_implante == "Implante Dental":
+                            forma = input("Ingrese la nueva forma del implante dental: ")
+                            sistema_fijacion = input("Ingrese el nuevo sistema de fijación: ")
+                            implante.material = material
+                            implante.tipo_fijacion = tipo_fijacion
+                            implante.tamano = tamano
+                            implante.forma = forma
+                            implante.sistema_fijacion = sistema_fijacion
+                        elif nombre_implante == "Marcapasos":
+                            num_electrodos = input("Ingrese el nuevo número de electrodos: ")
+                            alambrico = input("Alámbrico o inalámbrico: ")
+                            frecuencia = input("Ingrese la nueva frecuencia del marcapasos: ")
+                            implante.material = material
+                            implante.tipo_fijacion = tipo_fijacion
+                            implante.tamano = tamano
+                            implante.num_electrodos = num_electrodos
+                            implante.alambrico = alambrico
+                            implante.frecuencia = frecuencia
+                        elif nombre_implante == "Prótesis de Cadera":
+                            implante.material = material
+                            implante.tipo_fijacion = tipo_fijacion
+                            implante.tamano = tamano
+                        elif nombre_implante == "Prótesis de Rodilla":
+                            implante.material = material
+                            implante.tipo_fijacion = tipo_fijacion
+                            implante.tamano = tamano
+                        elif nombre_implante == "Stent Coronario":
+                            longitud = input("Ingresa la nueva longitud del stent coronario: ")
+                            diametro = input("Ingresa el nuevo diámetro del stent coronario: ")
+                            implante.material = material
+                            implante.tipo_fijacion = tipo_fijacion
+                            implante.tamano = tamano
+                            implante.longitud = longitud
+                            implante.diametro = diametro
+
+                        print("Implante editado correctamente.")
+                        break
             elif valor ==3: #eliminar implante existente
                   continue
             elif valor ==4: #mostrar todo el inventario
