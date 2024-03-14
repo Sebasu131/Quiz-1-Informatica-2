@@ -4,6 +4,7 @@ class ImplanteMedico:
         self.__material = material
         self.__tipo_fijacion = tipo_fijacion
         self.__tamano = tamano
+    #Getters ImplanteMedico
     def vertipo(self):
         return self.__tipo
     def vermaterial(self):
@@ -12,6 +13,7 @@ class ImplanteMedico:
         return self.__tipo_fijacion
     def vertamano(self):
         return self.__tamano
+    #Setters ImplanteMedico
     def asignartipo(self,n):
         self.__tipo=n
     def asignarmaterial(self,c):
@@ -31,12 +33,14 @@ class Marcapasos(ImplanteMedico):
         self.__num_electrodos = num_electrodos
         self.__alambrico = alambrico
         self.__frecuencia = frecuencia
+    #Getters Marcapasos
     def verelectrodos(self):
         return self.__num_electrodos
     def veralambrico(self):
         return self.__alambrico
     def verfrecuencia(self):
         return self.__frecuencia
+    #Setters Marcapasos
     def asignarelectrodos(self,n):
         self.__num_electrodos=n
     def asignaralambrico(self,c):
@@ -50,10 +54,12 @@ class StentCoronario(ImplanteMedico):
         super().__init__("Stent Coronario", material, tipo_fijacion, tamano)
         self.__longitud = longitud
         self.__diametro = diametro
+    #Getters StentCoronario
     def verlongitud(self):
         return self.__longitud
     def verdiametro(self):
         return self.__diametro
+    #Setters StentCoronario
     def asignarlongitud(self,l):
         self.__longitud=l
     def asignardiametro(self,d):
@@ -64,10 +70,12 @@ class ImplanteDental(ImplanteMedico):
         super().__init__("Implante Dental", material, tipo_fijacion, tamano)
         self.__forma = forma
         self.__sistema_fijacion = sistema_fijacion
+    #Getters ImplanteDental
     def verforma(self):
         return self.__forma
     def versistema(self):
         return self.__sistema_fijacion
+    #Setters ImplanteDental
     def asignarforma(self,f):
         self.__forma= f
     def asignarsistema(self,s):
@@ -86,7 +94,7 @@ class Paciente:
         self.__medico= medico
         self.__estadoimp= estadoimp
         self.__implante= implante
-        
+    #Getters Paciente
     def verNombre(self):
         return self.__nombre
     def verCedula(self):
@@ -99,7 +107,7 @@ class Paciente:
         return self.__estadoimp
     def verImplante(self):
         return self.__implante
-            
+    #Setters Paciente
     def asignarNombre(self,n):
         self.__nombre=n
     def asignarCedula(self,c):
@@ -147,4 +155,4 @@ class Sistema:
     def imprimirPacientes(self):
         for objeto in self.verPacientes:
             print (objeto)
-            
+
