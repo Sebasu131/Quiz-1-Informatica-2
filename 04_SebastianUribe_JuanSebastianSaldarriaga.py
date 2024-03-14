@@ -12,3 +12,11 @@ class ImplanteMedico:
         return self.__tipo_fijacion
     def vertamano(self):
         return self.__tamano
+    def asignartipo(self,n):
+        self.__tipo=n
+    def asignarmaterial(self,c):
+        self.__material=c
+    def asignartipofijacion(self,fi):
+        self.__tipo_fijacion=fi
+    def asignartamano(self,M):
+        self.__tamano=M
