@@ -292,7 +292,11 @@ def main():
                         break
                     else:
                         print('Ingrese una opción válida')
-                    continue
+                    for implante in sis.Verinventario():
+                        if implante.tipo == nombre_implante:
+                            sis.eliminarImplante(implante)
+                            print(f"Implante {nombre_implante} eliminado correctamente.")
+                            break
             elif valor ==4: #mostrar todo el inventario
                 print("Inventario:")
                 sis.imprimirInventario()               
